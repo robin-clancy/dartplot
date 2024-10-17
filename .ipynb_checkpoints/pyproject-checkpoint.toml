@@ -1,0 +1,11 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dartplot"
+version = "0.1.0"
+description = "Plots observation and state space diagnostics for DART with CAM/CESM"
+requires-python = ">= 3.10"
+readme = "README.md"
+license = { file = "LICENSE" }
