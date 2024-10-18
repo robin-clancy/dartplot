@@ -534,7 +534,7 @@ def calculate_vmean_timeseries_forecast_error(archive, truth, exp, var, abs,
                                     start_ind=start_ind, end_ind=end_ind, step=step)
     for i, time in enumerate(times[0:ntimes]):
         ds_forecast = load_forecast(archive, exp, time)[var]
-        ds_truth = load_truth(archive, exp, time)[var]
+        ds_truth = load_truth(archive, truth, time)[var]
         
         # Need this step as lev isn't identical over both
         ds_forecast['lev'] = ds_truth['lev']
@@ -556,7 +556,7 @@ def calculate_vmean_timeseries_output_error(archive, truth, exp, var, abs,
                                     start_ind=start_ind, end_ind=end_ind, step=step)
     for i, time in enumerate(times[0:ntimes]):
         ds_output = load_output(archive, exp, time)[var]
-        ds_truth = load_truth(archive, exp, time)[var]
+        ds_truth = load_truth(archive, truth, time)[var]
         
         # Need this step as lev isn't identical over both
         ds_output['lev'] = ds_truth['lev']
@@ -601,7 +601,7 @@ def calculate_vmean_timeseries_improvement(archive, truth, exp, var, abs,
     for i, time in enumerate(times[0:ntimes]):
         ds_output = load_output(archive, exp, time)[var]
         ds_forecast = load_forecast(archive, exp, time)[var]
-        ds_truth = load_truth(archive, exp, time)[var]
+        ds_truth = load_truth(archive, truth, time)[var]
         
         # Need this step as lev isn't identical over both
         ds_output['lev'] = ds_truth['lev']
